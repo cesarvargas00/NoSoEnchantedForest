@@ -353,14 +353,6 @@
 		9B20B6EB135CCB4100E53138 /* NoSoEnchantedForest */ = {
 			isa = PBXGroup;
 			children = (
-				9B20B7E9135CCB4200E53138 /* LICENSE_cocos2d.txt */,
-				9B20B7EE135CCB4200E53138 /* AppDelegate.h */,
-				9B20B7EF135CCB4200E53138 /* AppDelegate.m */,
-				9B20B7F1135CCB4200E53138 /* HelloWorldLayer.h */,
-				9B20B7F2135CCB4200E53138 /* HelloWorldLayer.m */,
-				9B20B6EC135CCB4100E53138 /* Resources */,
-				9B20B6F8135CCB4100E53138 /* cocos2d */,
-				9B20B7EA135CCB4200E53138 /* Supporting Files */,
 				9B25A11D135DF17A00522BE8 /* Perigo.h */,
 				9B25A11E135DF17A00522BE8 /* Perigo.m */,
 				9B25A119135DDF4300522BE8 /* Mato.h */,
@@ -370,6 +362,14 @@
 				9B25A120135DFECA00522BE8 /* Explorador.h */,
 				9B25A121135DFECA00522BE8 /* Explorador.m */,
 				9B25A123135E006E00522BE8 /* Pos.h */,
+				9B20B7E9135CCB4200E53138 /* LICENSE_cocos2d.txt */,
+				9B20B7EE135CCB4200E53138 /* AppDelegate.h */,
+				9B20B7EF135CCB4200E53138 /* AppDelegate.m */,
+				9B20B7F1135CCB4200E53138 /* HelloWorldLayer.h */,
+				9B20B7F2135CCB4200E53138 /* HelloWorldLayer.m */,
+				9B20B6EC135CCB4100E53138 /* Resources */,
+				9B20B6F8135CCB4100E53138 /* cocos2d */,
+				9B20B7EA135CCB4200E53138 /* Supporting Files */,
 			);
 			path = NoSoEnchantedForest;
 			sourceTree = "<group>";
