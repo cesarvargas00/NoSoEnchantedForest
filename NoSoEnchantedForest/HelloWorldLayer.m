@@ -8,7 +8,9 @@
 
 
 // Import the interfaces
+#define tamanho 5
 #import "HelloWorldLayer.h"
+#import "Floresta.h"
 
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
@@ -35,18 +37,43 @@
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init])) {
 		
-		// create and initialize a Label
-		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:64];
-
+		//Cria e aloca a Floresta.
+        Floresta *forest = [[Floresta alloc]init];
+        CCSprite* sprite;
+        
+        //Cria um array de Sprites com os Sprites da floresta.
+        NSMutableArray* arraySprites = [NSMutableArray arrayWithCapacity:5];
+        for (int i=0;i<tamanho;i++)
+            [arraySprites addObject:[NSMutableArray array]];
+        for(int i=0;i<tamanho;i++)
+            for(int j=0;j<tamanho;j++){
+                    sprite=[[forest getMatoX:i Y:j]getSprite];
+                    [[arraySprites objectAtIndex:i]addObject:sprite];
+            }
+        
+        
+       // [[arraySprites objectAtIndex:0]removeObjectAtIndex:0];
+        
+       // [[arraySprites objectAtIndex:0]insertObject:[CCSprite spriteWithFile:@"mato.png"] atIndex:(0)];
+        
 		// ask director the the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
-	
-		// position the label on the center of the screen
-		label.position =  ccp( size.width /2 , size.height/2 );
-		
-		// add the label as a child to this Layer
-		[self addChild: label];
+        
+		//Seta a posição dos Sprites na tela.
+        for(int i=0;i<tamanho;i++)
+            for(int j=0;j<tamanho;j++)
+                [[[arraySprites objectAtIndex:i]objectAtIndex:j] setPosition:ccp( size.width /(tamanho+1)*(i+1) , size.height/(tamanho+1)*(j+1) )];
+        		
+        //Adiciona os Sprites como filhos.
+        for(int i=0;i<tamanho;i++)
+            for(int j=0;j<tamanho;j++)
+                if([[arraySprites objectAtIndex:i]objectAtIndex:j]!=Nil)
+                    [self addChild:[[arraySprites objectAtIndex:i]objectAtIndex:j]];
+        
+        //releases
+        [forest release];
 	}
+    
 	return self;
 }
 
