@@ -16,7 +16,7 @@
 {
 	CCDirectorMac *director = (CCDirectorMac*) [CCDirector sharedDirector];
 	
-	[director setDisplayFPS:YES];
+	[director setDisplayFPS:NO];
 	
 	[director setOpenGLView:glView_];
 

@@ -9,7 +9,7 @@
 #import "Floresta.h"
 #import <stdlib.h>
 #import "Perigo.h"
-
+#define tamanho 5
 @implementation Floresta
 
 - (id)init
@@ -20,13 +20,13 @@
         //Aloca o array de Mato
         arrayMato = [NSMutableArray array];
         // Cria uma matriz no arrayMato alocado
-        for (int i=0;i<5;i++){
+        for (int i=0;i<tamanho;i++){
             [arrayMato addObject:[NSMutableArray array]];
         }
         int r;
         //Gera um número random de 0 a 3, e dependendo do número, aloca um objeto diferente.
-        for(int i=0;i<5;i++){
-            for(int j=0;j<5;j++){
+        for(int i=0;i<tamanho;i++){
+            for(int j=0;j<tamanho;j++){
                 r = arc4random() % 4;
                 if(r==0){
                     Mato *mato = [[Perigo alloc] init];

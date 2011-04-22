@@ -12,6 +12,12 @@
 #import "HelloWorldLayer.h"
 #import "Floresta.h"
 
+//Variáveis Globais de direção
+BOOL virarEsquerda = NO;
+BOOL virarDireita = NO;
+BOOL virarBaixo = NO;
+BOOL virarCima = NO;
+
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
 
@@ -37,24 +43,37 @@
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init])) {
 		
+        self.isKeyboardEnabled;
+         
+        
 		//Cria e aloca a Floresta.
         Floresta *forest = [[Floresta alloc]init];
         CCSprite* sprite;
+        Explorador* explorador = [[Explorador alloc]init];
         
         //Cria um array de Sprites com os Sprites da floresta.
-        NSMutableArray* arraySprites = [NSMutableArray arrayWithCapacity:5];
+        NSMutableArray* arraySprites = [NSMutableArray arrayWithCapacity:tamanho];
         for (int i=0;i<tamanho;i++)
             [arraySprites addObject:[NSMutableArray array]];
         for(int i=0;i<tamanho;i++)
             for(int j=0;j<tamanho;j++){
-                    sprite=[[forest getMatoX:i Y:j]getSprite];
-                    [[arraySprites objectAtIndex:i]addObject:sprite];
+                sprite=[[forest getMatoX:i Y:j]getSprite];
+                [[arraySprites objectAtIndex:i]addObject:sprite];
+                //verificar leaks
             }
         
+        //Array Auxiliar Explorador
+        NSMutableArray* arrayExplorador = [NSMutableArray arrayWithCapacity:tamanho];
+        for (int i=0;i<tamanho;i++)
+            [arrayExplorador addObject:[NSMutableArray array]];
+        sprite = [explorador getSprite];
+        [[arrayExplorador objectAtIndex:0]addObject:sprite];
         
-       // [[arraySprites objectAtIndex:0]removeObjectAtIndex:0];
         
-       // [[arraySprites objectAtIndex:0]insertObject:[CCSprite spriteWithFile:@"mato.png"] atIndex:(0)];
+        
+        // [[arraySprites objectAtIndex:0]removeObjectAtIndex:0];
+        
+        // [[arraySprites objectAtIndex:0]insertObject:[CCSprite spriteWithFile:@"mato.png"] atIndex:(0)];
         
 		// ask director the the window size
 		CGSize size = [[CCDirector sharedDirector] winSize];
@@ -63,14 +82,41 @@
         for(int i=0;i<tamanho;i++)
             for(int j=0;j<tamanho;j++)
                 [[[arraySprites objectAtIndex:i]objectAtIndex:j] setPosition:ccp( size.width /(tamanho+1)*(i+1) , size.height/(tamanho+1)*(j+1) )];
-        		
+        
+        //Seta a posição dos Sprites na tela.
+        for(int i=0;i<[arrayExplorador count] ;i++)
+            for(int j=0;j<[arrayExplorador count];j++)
+                //Bota o EXPLORADOR NA TELA!
+                [[[arrayExplorador objectAtIndex:0]objectAtIndex:0] setPosition:ccp( size.width /(tamanho+1)*(0+2) , size.height/(tamanho+1)*(0+2) )];
+        
         //Adiciona os Sprites como filhos.
         for(int i=0;i<tamanho;i++)
             for(int j=0;j<tamanho;j++)
                 if([[arraySprites objectAtIndex:i]objectAtIndex:j]!=Nil)
                     [self addChild:[[arraySprites objectAtIndex:i]objectAtIndex:j]];
+        //Seta o explorador como filho
+        [self addChild:[[arrayExplorador objectAtIndex:0]objectAtIndex:0]];
+        
+        //LOOP DO JOGO
+        if (virarDireita) {
+            [[[arrayExplorador objectAtIndex:0]objectAtIndex:0] setPosition:ccp( size.width /(tamanho+1)*(0+2) , size.height/(tamanho+1)*(0+2) )];
+            virarDireita=NO;
+        }
+        else  if (virarEsquerda) {
+            virarEsquerda=NO;
+        }
+        else  if (virarCima) {
+            virarCima=NO;
+        }
+        else  if (virarBaixo) {
+            virarBaixo=NO;
+            
+        }
+
+             
         
         //releases
+        
         [forest release];
 	}
     
@@ -87,4 +133,33 @@
 	// don't forget to call "super dealloc"
 	[super dealloc];
 }
+
+-(BOOL)ccKeyDown:(NSEvent *)event{
+    //123 esquerdo
+    //124 direito
+    //125 baixo
+    //126 cima
+    if ([event keyCode]==123) {
+        NSLog(@"OLA MUNDO , Apertei a tecla:%@",[event characters]);
+        virarEsquerda = YES;
+    }
+    else if ([event keyCode]==124) {
+        NSLog(@"OLA MUNDO , Apertei a tecla:%@!",[event characters]);
+        virarDireita = YES;
+    }
+    else if ([event keyCode]==125) {
+        NSLog(@"OLA MUNDO , Apertei a tecla:%@!",[event characters]);
+        virarBaixo = YES;
+    }
+    else if ([event keyCode]==126) {
+        NSLog(@"OLA MUNDO , Apertei a tecla:%@!",[event characters]);
+        virarCima = YES;
+    }
+    return YES;
+}
+
+
+
+
 @end
+
