@@ -10,9 +10,16 @@
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
 #import <Foundation/Foundation.h>
+#import "Floresta.h"
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayer
 {
+    NSMutableArray* arraySprites;
+    Floresta *forest;
+    CCSprite* sprite;
+    Explorador* explorador;
+    NSMutableArray* arrayExplorador;
+    CGSize size;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
@@ -20,4 +27,6 @@
 
 
 -(BOOL)ccKeyDown:(NSEvent *)event;
+-(void)gameLoop:(ccTime)dt;
+
 @end
