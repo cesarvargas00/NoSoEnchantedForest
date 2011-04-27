@@ -133,7 +133,7 @@ BOOL goUp= NO;
             id actionMove = [CCMoveTo actionWithDuration:duracao
                                                 position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+1)*[explorer getPos].y)];
             //Realiza efeito no explorador
-           // Mato * mato = [forest getMatoX:0 Y:0];
+            Mato * mato = [forest getMatoX:0 Y:0];
             //ERROR TRYING TO ACCESS THIS!!!!!!
            NSLog(@"%lu",[forest retainCount]);
             NSLog(@"%d",[explorer getVida]);
