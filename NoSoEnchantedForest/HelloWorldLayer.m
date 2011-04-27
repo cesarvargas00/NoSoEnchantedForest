@@ -14,10 +14,10 @@
 #define duracao 0.1
 
 //Variáveis Globais de direção
-BOOL virarEsquerda = NO;
-BOOL virarDireita = NO;
-BOOL virarBaixo = NO;
-BOOL virarCima = NO;
+BOOL turnLeft= NO;
+BOOL turnRight= NO;
+BOOL goDown = NO;
+BOOL goUp= NO;
 
 
 
@@ -43,12 +43,12 @@ BOOL virarCima = NO;
 // on "init" you need to initialize your instance
 -(id) init
 {
-    
+    [[CCEventDispatcher sharedDispatcher] addKeyboardDelegate:self priority:0];
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init])) {
 		forest = [[Floresta alloc]init];
-        explorador = [[Explorador alloc]init];
+        explorer= [[Explorador alloc]init];
         
         //Cria um array de Sprites com os Sprites da floresta.
         arraySprites = [NSMutableArray arrayWithCapacity:tamanho];
@@ -70,7 +70,7 @@ BOOL virarCima = NO;
                 [[[arraySprites objectAtIndex:i]objectAtIndex:j] setPosition:ccp( size.width /(tamanho+1)*(i+1) , size.height/(tamanho+1)*(j+1) )];
         
         //Bota o EXPLORADOR NA TELA!
-        [[explorador getSprite] setPosition:ccp( size.width /(tamanho+1) , size.height/(tamanho+1))];
+        [[explorer getSprite] setPosition:ccp( size.width /(tamanho+1) , size.height/(tamanho+1))];
         
         //Adiciona os Sprites como filhos.
         for(int i=0;i<tamanho;i++)
@@ -78,12 +78,11 @@ BOOL virarCima = NO;
                 if([[arraySprites objectAtIndex:i]objectAtIndex:j]!=Nil)
                     [self addChild:[[arraySprites objectAtIndex:i]objectAtIndex:j]];
         //Seta o explorador como filho
-        [self addChild:[explorador getSprite]];
+        [self addChild:[explorer getSprite]];
         //Começa o loop
         NSLog(@"%lu",[[forest getMatoX:0 Y:0] retainCount]);
-        [[CCEventDispatcher sharedDispatcher] addKeyboardDelegate:self priority:0];
         [self schedule:@selector(gameLoop:)];
-    }
+     }
     
 	return self;
 }
@@ -106,19 +105,19 @@ BOOL virarCima = NO;
     //126 cima
     if ([event keyCode]==123) {
         NSLog(@"OLA MUNDO , Apertei a tecla:%@",[event characters]);
-        virarEsquerda = YES;
+        turnLeft = YES;
     }
     else if ([event keyCode]==124) {
         NSLog(@"OLA MUNDO , Apertei a tecla:%@!",[event characters]);
-        virarDireita = YES;
+        turnRight = YES;
     }
     else if ([event keyCode]==125) {
         NSLog(@"OLA MUNDO , Apertei a tecla:%@!",[event characters]);
-        virarBaixo = YES;
+        goDown = YES;
     }
     else if ([event keyCode]==126) {
         NSLog(@"OLA MUNDO , Apertei a tecla:%@!",[event characters]);
-        virarCima = YES;
+        goUp = YES;
     }
     return YES;
 }
@@ -127,53 +126,53 @@ BOOL virarCima = NO;
 {
     
     //LOOP DO JOGO
-    if (virarDireita) {
-        //Move explorador para a direita
-        if([explorador getPos].x < tamanho){
-            [explorador setPosX:[explorador getPos].x + 1 Y:[explorador getPos].y];
+    if (turnRight) {
+        //Move explorador para a direita - MOVES EXPLORER TO THE RIGHT
+        if([explorer getPos].x < tamanho){
+            [explorer setPosX:[explorer getPos].x + 1 Y:[explorer getPos].y];
             id actionMove = [CCMoveTo actionWithDuration:duracao
-                                                position:ccp(size.width /(tamanho+1)*[explorador getPos].x,  size.height/(tamanho+1)*[explorador getPos].y)];
+                                                position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+1)*[explorer getPos].y)];
             //Realiza efeito no explorador
            // Mato * mato = [forest getMatoX:0 Y:0];
             //ERROR TRYING TO ACCESS THIS!!!!!!
-           NSLog(@"%lu",[[forest getMatoX:0 Y:0] retainCount]);
-            NSLog(@"%d",[explorador getVida]);
-            [[explorador getSprite] runAction:actionMove];
+           NSLog(@"%lu",[forest retainCount]);
+            NSLog(@"%d",[explorer getVida]);
+            [[explorer getSprite] runAction:actionMove];
         }
-        virarDireita=NO;
+        turnRight=NO;
     }
-    else  if (virarEsquerda) {
-        //Move explorador para a esquerda
-        if([explorador getPos].x > 1){
-            [explorador setPosX:[explorador getPos].x - 1 Y:[explorador getPos].y];
+    else  if (turnLeft) {
+        //Move explorador para a esquerda - MOVES EXPLORER TO THE LEFT
+        if([explorer getPos].x > 1){
+            [explorer setPosX:[explorer getPos].x - 1 Y:[explorer getPos].y];
             id actionMove = [CCMoveTo actionWithDuration:duracao 
-                                                position:ccp(size.width /(tamanho+1)*[explorador getPos].x,  size.height/(tamanho+1)*[explorador getPos].y)];
+                                                position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+1)*[explorer getPos].y)];
             
-            [[explorador getSprite] runAction:actionMove];
+            [[explorer getSprite] runAction:actionMove];
         }
-        virarEsquerda=NO;
+        turnLeft=NO;
     }
-    else  if (virarCima) {
-        //Move explorador para cima
-        if([explorador getPos].y < tamanho){
-            [explorador setPosX:[explorador getPos].x Y:[explorador getPos].y + 1];
+    else  if (goUp) {
+        //Move explorador para cima  - MOVES EXPLORER UP
+        if([explorer getPos].y < tamanho){
+            [explorer setPosX:[explorer getPos].x Y:[explorer getPos].y + 1];
             id actionMove = [CCMoveTo actionWithDuration:duracao
-                                                position:ccp(size.width /(tamanho+1)*[explorador getPos].x,  size.height/(tamanho+1)*[explorador getPos].y)];
+                                                position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+1)*[explorer getPos].y)];
             
-            [[explorador getSprite] runAction:actionMove];
+            [[explorer getSprite] runAction:actionMove];
         }
-        virarCima=NO;
+        goUp=NO;
     }
-    else  if (virarBaixo) {
-        //Move explorador para a baixo
-        if([explorador getPos].y >1){
-            [explorador setPosX:[explorador getPos].x Y:[explorador getPos].y - 1];
+    else  if (goDown) {
+        //Move explorador para a baixo  - MOVES EXPLORER DOWN
+        if([explorer getPos].y >1){
+            [explorer setPosX:[explorer getPos].x Y:[explorer getPos].y - 1];
             id actionMove = [CCMoveTo actionWithDuration:duracao
-                                                position:ccp(size.width /(tamanho+1)*[explorador getPos].x,  size.height/(tamanho+1)*[explorador getPos].y)];
-            [[explorador getSprite] runAction:actionMove];
+                                                position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+1)*[explorer getPos].y)];
+            [[explorer getSprite] runAction:actionMove];
         }
         
-        virarBaixo=NO;
+        goDown=NO;
         
     }
 }

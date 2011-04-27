@@ -18,7 +18,7 @@
     NSMutableArray* arraySprites;
     Floresta *forest;
     CCSprite* sprite;
-    Explorador* explorador;
+    Explorador* explorer;
     NSMutableArray* arrayExplorador;
     CGSize size;
 }
