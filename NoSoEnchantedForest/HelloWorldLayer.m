@@ -11,12 +11,14 @@
 #define tamanho 5
 #import "HelloWorldLayer.h"
 #import "Floresta.h"
+#define duracao 0.1
 
 //Variáveis Globais de direção
 BOOL virarEsquerda = NO;
 BOOL virarDireita = NO;
 BOOL virarBaixo = NO;
 BOOL virarCima = NO;
+
 
 
 
@@ -59,11 +61,6 @@ BOOL virarCima = NO;
                 [sprite release];
             }
         
-        
-        // [[arraySprites objectAtIndex:0]removeObjectAtIndex:0];
-        
-        // [[arraySprites objectAtIndex:0]insertObject:[CCSprite spriteWithFile:@"mato.png"] atIndex:(0)];
-        
         // ask director the the window size
         size = [[CCDirector sharedDirector] winSize];
         
@@ -83,6 +80,7 @@ BOOL virarCima = NO;
         //Seta o explorador como filho
         [self addChild:[explorador getSprite]];
         //Começa o loop
+        NSLog(@"%lu",[[forest getMatoX:0 Y:0] retainCount]);
         [[CCEventDispatcher sharedDispatcher] addKeyboardDelegate:self priority:0];
         [self schedule:@selector(gameLoop:)];
     }
@@ -130,19 +128,25 @@ BOOL virarCima = NO;
     
     //LOOP DO JOGO
     if (virarDireita) {
+        //Move explorador para a direita
         if([explorador getPos].x < tamanho){
             [explorador setPosX:[explorador getPos].x + 1 Y:[explorador getPos].y];
-            id actionMove = [CCMoveTo actionWithDuration:0.1 
+            id actionMove = [CCMoveTo actionWithDuration:duracao
                                                 position:ccp(size.width /(tamanho+1)*[explorador getPos].x,  size.height/(tamanho+1)*[explorador getPos].y)];
-            
+            //Realiza efeito no explorador
+           // Mato * mato = [forest getMatoX:0 Y:0];
+            //ERROR TRYING TO ACCESS THIS!!!!!!
+           NSLog(@"%lu",[[forest getMatoX:0 Y:0] retainCount]);
+            NSLog(@"%d",[explorador getVida]);
             [[explorador getSprite] runAction:actionMove];
         }
         virarDireita=NO;
     }
     else  if (virarEsquerda) {
+        //Move explorador para a esquerda
         if([explorador getPos].x > 1){
             [explorador setPosX:[explorador getPos].x - 1 Y:[explorador getPos].y];
-            id actionMove = [CCMoveTo actionWithDuration:0.1 
+            id actionMove = [CCMoveTo actionWithDuration:duracao 
                                                 position:ccp(size.width /(tamanho+1)*[explorador getPos].x,  size.height/(tamanho+1)*[explorador getPos].y)];
             
             [[explorador getSprite] runAction:actionMove];
@@ -150,9 +154,10 @@ BOOL virarCima = NO;
         virarEsquerda=NO;
     }
     else  if (virarCima) {
+        //Move explorador para cima
         if([explorador getPos].y < tamanho){
             [explorador setPosX:[explorador getPos].x Y:[explorador getPos].y + 1];
-            id actionMove = [CCMoveTo actionWithDuration:0.1
+            id actionMove = [CCMoveTo actionWithDuration:duracao
                                                 position:ccp(size.width /(tamanho+1)*[explorador getPos].x,  size.height/(tamanho+1)*[explorador getPos].y)];
             
             [[explorador getSprite] runAction:actionMove];
@@ -160,9 +165,10 @@ BOOL virarCima = NO;
         virarCima=NO;
     }
     else  if (virarBaixo) {
+        //Move explorador para a baixo
         if([explorador getPos].y >1){
             [explorador setPosX:[explorador getPos].x Y:[explorador getPos].y - 1];
-            id actionMove = [CCMoveTo actionWithDuration:0.1
+            id actionMove = [CCMoveTo actionWithDuration:duracao
                                                 position:ccp(size.width /(tamanho+1)*[explorador getPos].x,  size.height/(tamanho+1)*[explorador getPos].y)];
             [[explorador getSprite] runAction:actionMove];
         }

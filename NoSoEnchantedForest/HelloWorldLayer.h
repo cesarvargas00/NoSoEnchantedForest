@@ -14,6 +14,7 @@
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayer
 {
+    @protected
     NSMutableArray* arraySprites;
     Floresta *forest;
     CCSprite* sprite;
