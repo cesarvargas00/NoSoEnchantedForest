@@ -21,6 +21,7 @@
     Explorador* explorer;
     NSMutableArray* arrayExplorador;
     CGSize size;
+    NSMutableArray* hearts;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
@@ -29,5 +30,6 @@
 
 -(BOOL)ccKeyDown:(NSEvent *)event;
 -(void)gameLoop:(ccTime)dt;
+-(void)updateHearts;
 
 @end

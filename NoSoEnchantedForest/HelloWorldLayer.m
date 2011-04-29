@@ -19,9 +19,7 @@ BOOL turnLeft= NO;
 BOOL turnRight= NO;
 BOOL goDown = NO;
 BOOL goUp= NO;
-
-
-
+BOOL moving=NO;
 
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
@@ -50,6 +48,7 @@ BOOL goUp= NO;
 	if( (self=[super initWithColor:ccc4(5,144,22,255)])) {
 		forest = [[Floresta alloc]init];
         explorer= [[Explorador alloc]init];
+        hearts = [[NSMutableArray alloc]init];
         
         //Cria um array de Sprites com os Sprites da floresta.
         arraySprites = [NSMutableArray arrayWithCapacity:tamanho];
@@ -61,14 +60,13 @@ BOOL goUp= NO;
                 [[arraySprites objectAtIndex:i]addObject:sprite];
                 [sprite release];
             }
-        
         // ask director the the window size
         size = [[CCDirector sharedDirector] winSize];
         
         //Seta a posição inicial dos Sprites na tela.
         for(int i=0;i<tamanho;i++)
             for(int j=0;j<tamanho;j++)
-                [[[arraySprites objectAtIndex:i]objectAtIndex:j] setPosition:ccp( size.width /(tamanho+1)*(i+1) , size.height/(tamanho+1)*(j+1) )];
+                [[[arraySprites objectAtIndex:i]objectAtIndex:j] setPosition:ccp( size.width /(tamanho+1)*(i+1) , size.height/(tamanho+2)*(j+1) )];
         
         //Bota o EXPLORADOR NA TELA!
         [[explorer getSprite] setPosition:ccp( size.width /(tamanho+1) , size.height/(tamanho+1))];
@@ -84,18 +82,30 @@ BOOL goUp= NO;
         for(int i=0;i<tamanho;i++)
             for(int j=0;j<tamanho;j++)
                 [[[arraySprites objectAtIndex:i]objectAtIndex:j] setVisible:NO];
-                    
-
+        //Preenche o vetor de corações:
+        for (int i=0; i<5; i++){
+            CCSprite* heart =[[CCSprite alloc]initWithFile:@"heart.png"];
+            [hearts addObject:heart];
+            [heart release];
+        }
+        //Posição inicial dos corações:
+        for(int i=0;i<5;i++)
+            [[hearts objectAtIndex:i] setPosition:ccp( (size.width-50)-50*i , size.height-20)];
+        
+        //Coloca o vetor de corações na tela:
+        for (int i=0; i<5; i++){
+            [self addChild:[hearts objectAtIndex:i]];
+        }
         //Seta o explorador como filho
         [self addChild:[explorer getSprite]];
         //Começa o loop
         [self schedule:@selector(gameLoop:)];
-     }
+    }
     
 	return self;
 }
 
-// on "dealloc" you need to release all your retained objects
+//TODO on "dealloc" you need to release all your retained objects
 - (void) dealloc
 {
 	// in case you have something to dealloc, do it in this method
@@ -107,10 +117,6 @@ BOOL goUp= NO;
 }
 
 -(BOOL)ccKeyDown:(NSEvent *)event{
-    //123 esquerdo
-    //124 direito
-    //125 baixo
-    //126 cima
     if ([event keyCode]==123) {
         NSLog(@"OLA MUNDO , Apertei a tecla:%@",[event characters]);
         turnLeft = YES;
@@ -140,17 +146,11 @@ BOOL goUp= NO;
             [explorer setPosX:[explorer getPos].x + 1 Y:[explorer getPos].y];
             //Mostra o Mato
             [[[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1]getSprite]setVisible: YES];
-            //Move o explorador
-            id actionMove = [CCMoveTo actionWithDuration:duracao
-                                                position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+1)*[explorer getPos].y)];
-            //Realiza efeito no explorador
-            Mato * mato = [forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1];
-            [mato efeito:explorer];
-           //NSLog(@"%lu",[mato retainCount]);
-            NSLog(@" VIDA :%d",[explorer getVida]);
-            [[explorer getSprite] runAction:actionMove];
+            [[explorer getSprite] runAction:[CCMoveTo actionWithDuration:duracao
+                                                                position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+2)*[explorer getPos].y)]];
         }
         turnRight=NO;
+        [self updateHearts];
     }
     else  if (turnLeft) {
         //Move explorador para a esquerda - MOVES EXPLORER TO THE LEFT
@@ -158,18 +158,11 @@ BOOL goUp= NO;
             [explorer setPosX:[explorer getPos].x - 1 Y:[explorer getPos].y];
             //Mostra o Mato
             [[[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1]getSprite]setVisible: YES];
-
-            id actionMove = [CCMoveTo actionWithDuration:duracao 
-                                                position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+1)*[explorer getPos].y)];
-            
-            //Realiza efeito no explorador
-            Mato * mato = [forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1];
-            [mato efeito:explorer];
-            //NSLog(@"%lu",[mato retainCount]);
-            NSLog(@" VIDA :%d",[explorer getVida]);
-            [[explorer getSprite] runAction:actionMove];
+            [[explorer getSprite] runAction:[CCMoveTo actionWithDuration:duracao 
+                                                                position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+2)*[explorer getPos].y)]];
         }
         turnLeft=NO;
+        [self updateHearts];
     }
     else  if (goUp) {
         //Move explorador para cima  - MOVES EXPLORER UP
@@ -177,43 +170,44 @@ BOOL goUp= NO;
             [explorer setPosX:[explorer getPos].x Y:[explorer getPos].y + 1];
             //Mostra o Mato
             [[[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1]getSprite]setVisible: YES];
-
-            id actionMove = [CCMoveTo actionWithDuration:duracao
-                                                position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+1)*[explorer getPos].y)];
-            
-            //Realiza efeito no explorador
-            Mato * mato = [forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1];
-            [mato efeito:explorer];
-            //NSLog(@"%lu",[mato retainCount]);
-            NSLog(@" VIDA :%d",[explorer getVida]);
-            
-            [[explorer getSprite] runAction:actionMove];
+            [[explorer getSprite] runAction:[CCMoveTo actionWithDuration:duracao
+                                                                position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+2)*[explorer getPos].y)]];
         }
         goUp=NO;
+        [self updateHearts];
     }
     else  if (goDown) {
-        //Move explorador para a baixo  - MOVES EXPLORER DOWN
+        //Move explorador para baixo  - MOVES EXPLORER DOWN
         if([explorer getPos].y >1){
             [explorer setPosX:[explorer getPos].x Y:[explorer getPos].y - 1];
             //Mostra o Mato
             [[[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1]getSprite]setVisible: YES];
-
-            id actionMove = [CCMoveTo actionWithDuration:duracao
-                                                position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+1)*[explorer getPos].y)];
             
-            //Realiza efeito no explorador
-            Mato * mato = [forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1];
-            [mato efeito:explorer];
-            //NSLog(@"%lu",[mato retainCount]);
-            NSLog(@" VIDA :%d",[explorer getVida]);
-            [[explorer getSprite] runAction:actionMove];
+            [[explorer getSprite] runAction:[CCMoveTo actionWithDuration:duracao
+                                                                position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+2)*[explorer getPos].y)]];
         }
-        
         goDown=NO;
-        
+        [self updateHearts];
     }
 }
 
+-(void)updateHearts{
+    //Atualiza os corações
+    [[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1] efeito:explorer];
+    if([explorer getVida]<=0)
+    {
+        for(int i=0;i<5;i++){
+            [[hearts objectAtIndex:i
+              ]setVisible:NO];
+        }
+    }
+    if([explorer getVida]>0){
+        for(int i=5;i>[explorer getVida];i--){
+            [[hearts objectAtIndex:i-1
+              ]setVisible:NO];
+        }
+    }
+}
 
 @end
 

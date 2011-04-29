@@ -103,6 +103,7 @@
 		9B25A129135E1B1000522BE8 /* perigo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B25A127135E1B1000522BE8 /* perigo.png */; };
 		9B512D2D136B35C40064F84E /* sapo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B512D2C136B35C40064F84E /* sapo.png */; };
 		9B512D30136B37A80064F84E /* leao.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B512D2F136B37A80064F84E /* leao.png */; };
+		9B512D32136B50A20064F84E /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B512D31136B50A20064F84E /* heart.png */; };
 		9B759B3B135FD097000CCD47 /* Explorador.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B759B38135FD097000CCD47 /* Explorador.m */; };
 		9B759B3C135FD097000CCD47 /* Mato.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B759B3A135FD097000CCD47 /* Mato.m */; };
 		9B75FD3713699F370092AE05 /* Sapo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B75FD3613699F370092AE05 /* Sapo.m */; };
@@ -303,6 +304,7 @@
 		9B25A127135E1B1000522BE8 /* perigo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = perigo.png; sourceTree = "<group>"; };
 		9B512D2C136B35C40064F84E /* sapo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sapo.png; sourceTree = "<group>"; };
 		9B512D2F136B37A80064F84E /* leao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leao.png; sourceTree = "<group>"; };
+		9B512D31136B50A20064F84E /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		9B759B37135FD097000CCD47 /* Explorador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Explorador.h; sourceTree = "<group>"; };
 		9B759B38135FD097000CCD47 /* Explorador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Explorador.m; sourceTree = "<group>"; };
 		9B759B39135FD097000CCD47 /* Mato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mato.h; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 		9B20B6EC135CCB4100E53138 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9B512D31136B50A20064F84E /* heart.png */,
 				9B512D2F136B37A80064F84E /* leao.png */,
 				9B512D2C136B35C40064F84E /* sapo.png */,
 				9B25A126135E1B1000522BE8 /* mato.png */,
@@ -642,6 +645,7 @@
 				9B25A129135E1B1000522BE8 /* perigo.png in Resources */,
 				9B512D2D136B35C40064F84E /* sapo.png in Resources */,
 				9B512D30136B37A80064F84E /* leao.png in Resources */,
+				9B512D32136B50A20064F84E /* heart.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

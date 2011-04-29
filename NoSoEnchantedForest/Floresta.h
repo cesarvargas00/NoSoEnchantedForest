@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Mato.h"
-#define tamanho 5
+#define tamanho 8
 @interface Floresta : NSObject {
 @private
     NSMutableArray *arrayMato;
