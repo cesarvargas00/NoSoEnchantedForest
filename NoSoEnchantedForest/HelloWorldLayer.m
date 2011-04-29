@@ -8,10 +8,11 @@
 
 
 // Import the interfaces
-#define tamanho 5
+
 #import "HelloWorldLayer.h"
 #import "Floresta.h"
-#define duracao 0.1
+
+#define duracao 0.5
 
 //Variáveis Globais de direção
 BOOL turnLeft= NO;
@@ -46,7 +47,7 @@ BOOL goUp= NO;
     [[CCEventDispatcher sharedDispatcher] addKeyboardDelegate:self priority:0];
 	// always call "super" init
 	// Apple recommends to re-assign "self" with the "super" return value
-	if( (self=[super init])) {
+	if( (self=[super initWithColor:ccc4(5,144,22,255)])) {
 		forest = [[Floresta alloc]init];
         explorer= [[Explorador alloc]init];
         
@@ -77,10 +78,17 @@ BOOL goUp= NO;
             for(int j=0;j<tamanho;j++)
                 if([[arraySprites objectAtIndex:i]objectAtIndex:j]!=Nil)
                     [self addChild:[[arraySprites objectAtIndex:i]objectAtIndex:j]];
+        
+        //VISIBILIDADE INICIAL ZERO:
+        
+        for(int i=0;i<tamanho;i++)
+            for(int j=0;j<tamanho;j++)
+                [[[arraySprites objectAtIndex:i]objectAtIndex:j] setVisible:NO];
+                    
+
         //Seta o explorador como filho
         [self addChild:[explorer getSprite]];
         //Começa o loop
-        NSLog(@"%lu",[[forest getMatoX:0 Y:0] retainCount]);
         [self schedule:@selector(gameLoop:)];
      }
     
@@ -130,13 +138,16 @@ BOOL goUp= NO;
         //Move explorador para a direita - MOVES EXPLORER TO THE RIGHT
         if([explorer getPos].x < tamanho){
             [explorer setPosX:[explorer getPos].x + 1 Y:[explorer getPos].y];
+            //Mostra o Mato
+            [[[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1]getSprite]setVisible: YES];
+            //Move o explorador
             id actionMove = [CCMoveTo actionWithDuration:duracao
                                                 position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+1)*[explorer getPos].y)];
             //Realiza efeito no explorador
-            Mato * mato = [forest getMatoX:0 Y:0];
-            //ERROR TRYING TO ACCESS THIS!!!!!!
-           NSLog(@"%lu",[forest retainCount]);
-            NSLog(@"%d",[explorer getVida]);
+            Mato * mato = [forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1];
+            [mato efeito:explorer];
+           //NSLog(@"%lu",[mato retainCount]);
+            NSLog(@" VIDA :%d",[explorer getVida]);
             [[explorer getSprite] runAction:actionMove];
         }
         turnRight=NO;
@@ -145,9 +156,17 @@ BOOL goUp= NO;
         //Move explorador para a esquerda - MOVES EXPLORER TO THE LEFT
         if([explorer getPos].x > 1){
             [explorer setPosX:[explorer getPos].x - 1 Y:[explorer getPos].y];
+            //Mostra o Mato
+            [[[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1]getSprite]setVisible: YES];
+
             id actionMove = [CCMoveTo actionWithDuration:duracao 
                                                 position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+1)*[explorer getPos].y)];
             
+            //Realiza efeito no explorador
+            Mato * mato = [forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1];
+            [mato efeito:explorer];
+            //NSLog(@"%lu",[mato retainCount]);
+            NSLog(@" VIDA :%d",[explorer getVida]);
             [[explorer getSprite] runAction:actionMove];
         }
         turnLeft=NO;
@@ -156,8 +175,17 @@ BOOL goUp= NO;
         //Move explorador para cima  - MOVES EXPLORER UP
         if([explorer getPos].y < tamanho){
             [explorer setPosX:[explorer getPos].x Y:[explorer getPos].y + 1];
+            //Mostra o Mato
+            [[[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1]getSprite]setVisible: YES];
+
             id actionMove = [CCMoveTo actionWithDuration:duracao
                                                 position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+1)*[explorer getPos].y)];
+            
+            //Realiza efeito no explorador
+            Mato * mato = [forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1];
+            [mato efeito:explorer];
+            //NSLog(@"%lu",[mato retainCount]);
+            NSLog(@" VIDA :%d",[explorer getVida]);
             
             [[explorer getSprite] runAction:actionMove];
         }
@@ -167,8 +195,17 @@ BOOL goUp= NO;
         //Move explorador para a baixo  - MOVES EXPLORER DOWN
         if([explorer getPos].y >1){
             [explorer setPosX:[explorer getPos].x Y:[explorer getPos].y - 1];
+            //Mostra o Mato
+            [[[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1]getSprite]setVisible: YES];
+
             id actionMove = [CCMoveTo actionWithDuration:duracao
                                                 position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+1)*[explorer getPos].y)];
+            
+            //Realiza efeito no explorador
+            Mato * mato = [forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1];
+            [mato efeito:explorer];
+            //NSLog(@"%lu",[mato retainCount]);
+            NSLog(@" VIDA :%d",[explorer getVida]);
             [[explorer getSprite] runAction:actionMove];
         }
         

@@ -97,12 +97,16 @@
 		9B20B7F0135CCB4200E53138 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B20B7EF135CCB4200E53138 /* AppDelegate.m */; };
 		9B20B7F3135CCB4200E53138 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B20B7F2135CCB4200E53138 /* HelloWorldLayer.m */; };
 		9B20B7FB135CCBBC00E53138 /* Floresta.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B20B7FA135CCBBC00E53138 /* Floresta.m */; };
-		9B25A11F135DF17A00522BE8 /* Perigo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B25A11E135DF17A00522BE8 /* Perigo.m */; };
+		9B25A11F135DF17A00522BE8 /* Cobra.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B25A11E135DF17A00522BE8 /* Cobra.m */; };
 		9B25A125135E199D00522BE8 /* explorador.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B25A124135E199D00522BE8 /* explorador.png */; };
 		9B25A128135E1B1000522BE8 /* mato.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B25A126135E1B1000522BE8 /* mato.png */; };
 		9B25A129135E1B1000522BE8 /* perigo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B25A127135E1B1000522BE8 /* perigo.png */; };
+		9B512D2D136B35C40064F84E /* sapo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B512D2C136B35C40064F84E /* sapo.png */; };
+		9B512D30136B37A80064F84E /* leao.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B512D2F136B37A80064F84E /* leao.png */; };
 		9B759B3B135FD097000CCD47 /* Explorador.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B759B38135FD097000CCD47 /* Explorador.m */; };
 		9B759B3C135FD097000CCD47 /* Mato.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B759B3A135FD097000CCD47 /* Mato.m */; };
+		9B75FD3713699F370092AE05 /* Sapo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B75FD3613699F370092AE05 /* Sapo.m */; };
+		9B75FD3B1369A35A0092AE05 /* Leao.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B75FD3A1369A35A0092AE05 /* Leao.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -291,16 +295,22 @@
 		9B20B7F2135CCB4200E53138 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		9B20B7F9135CCBBC00E53138 /* Floresta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Floresta.h; sourceTree = "<group>"; };
 		9B20B7FA135CCBBC00E53138 /* Floresta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Floresta.m; sourceTree = "<group>"; };
-		9B25A11D135DF17A00522BE8 /* Perigo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Perigo.h; sourceTree = "<group>"; };
-		9B25A11E135DF17A00522BE8 /* Perigo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Perigo.m; sourceTree = "<group>"; };
+		9B25A11D135DF17A00522BE8 /* Cobra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cobra.h; sourceTree = "<group>"; };
+		9B25A11E135DF17A00522BE8 /* Cobra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cobra.m; sourceTree = "<group>"; };
 		9B25A123135E006E00522BE8 /* Pos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Pos.h; path = ../Pos.h; sourceTree = "<group>"; };
 		9B25A124135E199D00522BE8 /* explorador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explorador.png; sourceTree = "<group>"; };
 		9B25A126135E1B1000522BE8 /* mato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mato.png; sourceTree = "<group>"; };
 		9B25A127135E1B1000522BE8 /* perigo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = perigo.png; sourceTree = "<group>"; };
+		9B512D2C136B35C40064F84E /* sapo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sapo.png; sourceTree = "<group>"; };
+		9B512D2F136B37A80064F84E /* leao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leao.png; sourceTree = "<group>"; };
 		9B759B37135FD097000CCD47 /* Explorador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Explorador.h; sourceTree = "<group>"; };
 		9B759B38135FD097000CCD47 /* Explorador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Explorador.m; sourceTree = "<group>"; };
 		9B759B39135FD097000CCD47 /* Mato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mato.h; sourceTree = "<group>"; };
 		9B759B3A135FD097000CCD47 /* Mato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mato.m; sourceTree = "<group>"; };
+		9B75FD3513699F370092AE05 /* Sapo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sapo.h; sourceTree = "<group>"; };
+		9B75FD3613699F370092AE05 /* Sapo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sapo.m; sourceTree = "<group>"; };
+		9B75FD391369A35A0092AE05 /* Leao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Leao.h; sourceTree = "<group>"; };
+		9B75FD3A1369A35A0092AE05 /* Leao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Leao.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,8 +363,8 @@
 		9B20B6EB135CCB4100E53138 /* NoSoEnchantedForest */ = {
 			isa = PBXGroup;
 			children = (
-				9B25A11D135DF17A00522BE8 /* Perigo.h */,
-				9B25A11E135DF17A00522BE8 /* Perigo.m */,
+				9B25A11D135DF17A00522BE8 /* Cobra.h */,
+				9B25A11E135DF17A00522BE8 /* Cobra.m */,
 				9B759B37135FD097000CCD47 /* Explorador.h */,
 				9B759B38135FD097000CCD47 /* Explorador.m */,
 				9B759B39135FD097000CCD47 /* Mato.h */,
@@ -367,6 +377,10 @@
 				9B20B7EF135CCB4200E53138 /* AppDelegate.m */,
 				9B20B7F1135CCB4200E53138 /* HelloWorldLayer.h */,
 				9B20B7F2135CCB4200E53138 /* HelloWorldLayer.m */,
+				9B75FD3513699F370092AE05 /* Sapo.h */,
+				9B75FD3613699F370092AE05 /* Sapo.m */,
+				9B75FD391369A35A0092AE05 /* Leao.h */,
+				9B75FD3A1369A35A0092AE05 /* Leao.m */,
 				9B20B6EC135CCB4100E53138 /* Resources */,
 				9B20B6F8135CCB4100E53138 /* cocos2d */,
 				9B20B7EA135CCB4200E53138 /* Supporting Files */,
@@ -377,6 +391,8 @@
 		9B20B6EC135CCB4100E53138 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9B512D2F136B37A80064F84E /* leao.png */,
+				9B512D2C136B35C40064F84E /* sapo.png */,
 				9B25A126135E1B1000522BE8 /* mato.png */,
 				9B25A127135E1B1000522BE8 /* perigo.png */,
 				9B25A124135E199D00522BE8 /* explorador.png */,
@@ -624,6 +640,8 @@
 				9B25A125135E199D00522BE8 /* explorador.png in Resources */,
 				9B25A128135E1B1000522BE8 /* mato.png in Resources */,
 				9B25A129135E1B1000522BE8 /* perigo.png in Resources */,
+				9B512D2D136B35C40064F84E /* sapo.png in Resources */,
+				9B512D30136B37A80064F84E /* leao.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,9 +732,11 @@
 				9B20B7F0135CCB4200E53138 /* AppDelegate.m in Sources */,
 				9B20B7F3135CCB4200E53138 /* HelloWorldLayer.m in Sources */,
 				9B20B7FB135CCBBC00E53138 /* Floresta.m in Sources */,
-				9B25A11F135DF17A00522BE8 /* Perigo.m in Sources */,
+				9B25A11F135DF17A00522BE8 /* Cobra.m in Sources */,
 				9B759B3B135FD097000CCD47 /* Explorador.m in Sources */,
 				9B759B3C135FD097000CCD47 /* Mato.m in Sources */,
+				9B75FD3713699F370092AE05 /* Sapo.m in Sources */,
+				9B75FD3B1369A35A0092AE05 /* Leao.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

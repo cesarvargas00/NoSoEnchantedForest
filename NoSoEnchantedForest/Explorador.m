@@ -40,7 +40,7 @@
 }
 -(void)setVida:(int) v
 {
-    vida+=v;
+    vida=v;
 }
 
 -(CCSprite *) getSprite

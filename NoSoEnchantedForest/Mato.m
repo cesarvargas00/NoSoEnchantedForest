@@ -29,6 +29,8 @@
 
 -(void)efeito:(Explorador*)explorador{
     //Pontos+++?
+    NSLog(@"Nada acontece");
+//    se for um mato, nada acontece
 }
 -(CCSprite*)getSprite
 {

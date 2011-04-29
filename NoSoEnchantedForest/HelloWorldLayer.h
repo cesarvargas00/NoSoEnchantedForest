@@ -12,7 +12,7 @@
 #import <Foundation/Foundation.h>
 #import "Floresta.h"
 // HelloWorldLayer
-@interface HelloWorldLayer : CCLayer
+@interface HelloWorldLayer  : CCLayerColor
 {
     @protected
     NSMutableArray* arraySprites;
