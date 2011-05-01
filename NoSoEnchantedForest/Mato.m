@@ -16,7 +16,7 @@
     self = [super init];
     if (self) {
         CCSprite* _sprite = [[CCSprite alloc]initWithFile:@"mato.png"];
-        sprite = [_sprite retain];
+        sprite =[_sprite retain];
         [_sprite release ];
     }
     return self;
@@ -24,7 +24,9 @@
 
 - (void)dealloc
 {
-    [super dealloc];
+        [super dealloc];
+    [sprite release];
+
 }
 
 -(void)efeito:(Explorador*)explorador{

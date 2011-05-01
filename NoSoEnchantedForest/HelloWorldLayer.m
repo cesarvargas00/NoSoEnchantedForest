@@ -50,6 +50,7 @@ BOOL moving=NO;
         explorer= [[Explorador alloc]init];
         hearts = [[NSMutableArray alloc]init];
         
+        
         //Cria um array de Sprites com os Sprites da floresta.
         arraySprites = [NSMutableArray arrayWithCapacity:tamanho];
         for (int i=0;i<tamanho;i++)
@@ -111,9 +112,12 @@ BOOL moving=NO;
 	// in case you have something to dealloc, do it in this method
 	// in this particular example nothing needs to be released.
 	// cocos2d will automatically release all the children (Label)
-	
+    [forest release];
+    [explorer release];
+    [hearts release];
 	// don't forget to call "super dealloc"
 	[super dealloc];
+    
 }
 
 -(BOOL)ccKeyDown:(NSEvent *)event{
@@ -193,19 +197,19 @@ BOOL moving=NO;
 
 -(void)updateHearts{
     //Atualiza os corações
+    if([explorer getVida]>0 && [explorer getVida]<6){
     [[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1] efeito:explorer];
-    if([explorer getVida]<=0)
-    {
+    
         for(int i=0;i<5;i++){
             [[hearts objectAtIndex:i
               ]setVisible:NO];
         }
-    }
-    if([explorer getVida]>0){
-        for(int i=5;i>[explorer getVida];i--){
-            [[hearts objectAtIndex:i-1
-              ]setVisible:NO];
+        
+        for(int i=0;i<[explorer getVida];i++){
+            [[hearts objectAtIndex:i
+              ]setVisible:YES];
         }
+
     }
 }
 

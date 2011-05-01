@@ -104,10 +104,33 @@
 		9B512D2D136B35C40064F84E /* sapo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B512D2C136B35C40064F84E /* sapo.png */; };
 		9B512D30136B37A80064F84E /* leao.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B512D2F136B37A80064F84E /* leao.png */; };
 		9B512D32136B50A20064F84E /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B512D31136B50A20064F84E /* heart.png */; };
+		9B51B2A5136D9DBE00CAE9EE /* Danakilia.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B51B299136D9DBE00CAE9EE /* Danakilia.m */; };
+		9B51B2A6136D9DBE00CAE9EE /* Jaguatirica.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B51B29B136D9DBE00CAE9EE /* Jaguatirica.m */; };
+		9B51B2A7136D9DBE00CAE9EE /* Manga.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B51B29D136D9DBE00CAE9EE /* Manga.m */; };
+		9B51B2A8136D9DBE00CAE9EE /* Marula.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B51B29F136D9DBE00CAE9EE /* Marula.m */; };
+		9B51B2A9136D9DBE00CAE9EE /* Piranha.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B51B2A1136D9DBE00CAE9EE /* Piranha.m */; };
+		9B51B2AA136D9DBE00CAE9EE /* Tambaqui.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B51B2A3136D9DBE00CAE9EE /* Tambaqui.m */; };
+		9B66E8B5136DE868007F7626 /* ViuvaNegra.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B66E8B4136DE868007F7626 /* ViuvaNegra.m */; };
+		9B66E8BA136DE888007F7626 /* Tarantula.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B66E8B9136DE888007F7626 /* Tarantula.m */; };
+		9B66E8BD136DE8B3007F7626 /* Naja.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B66E8BC136DE8B3007F7626 /* Naja.m */; };
+		9B66E8C0136DE8DE007F7626 /* Hiena.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B66E8BF136DE8DE007F7626 /* Hiena.m */; };
+		9B66E8C5136DE91C007F7626 /* Kiwano.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B66E8C2136DE91C007F7626 /* Kiwano.m */; };
+		9B66E8C6136DE91C007F7626 /* NoemNoem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B66E8C4136DE91C007F7626 /* NoemNoem.m */; };
+		9B66E8C9136DEBC8007F7626 /* Cupuacu.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B66E8C8136DEBC8007F7626 /* Cupuacu.m */; };
+		9B66E8CB136DEE3E007F7626 /* cupuacu.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B66E8CA136DEE3E007F7626 /* cupuacu.png */; };
+		9B66E8CD136DF019007F7626 /* manga.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B66E8CC136DF019007F7626 /* manga.png */; };
+		9B66E8CF136DF1AC007F7626 /* jaguatirica.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B66E8CE136DF1AC007F7626 /* jaguatirica.png */; };
+		9B66E8D1136DF22B007F7626 /* piranha.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B66E8D0136DF22B007F7626 /* piranha.png */; };
+		9B66E8D3136DF2B1007F7626 /* tambaqui.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B66E8D2136DF2B1007F7626 /* tambaqui.png */; };
+		9B66E8D5136DF9FF007F7626 /* escorpiao.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B66E8D4136DF9FF007F7626 /* escorpiao.png */; };
+		9B66E8D7136E065B007F7626 /* caranguejeira.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B66E8D6136E065B007F7626 /* caranguejeira.png */; };
 		9B759B3B135FD097000CCD47 /* Explorador.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B759B38135FD097000CCD47 /* Explorador.m */; };
 		9B759B3C135FD097000CCD47 /* Mato.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B759B3A135FD097000CCD47 /* Mato.m */; };
 		9B75FD3713699F370092AE05 /* Sapo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B75FD3613699F370092AE05 /* Sapo.m */; };
 		9B75FD3B1369A35A0092AE05 /* Leao.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B75FD3A1369A35A0092AE05 /* Leao.m */; };
+		9B7BA432136DE62800BD1418 /* AranhaCaran.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7BA42D136DE62800BD1418 /* AranhaCaran.m */; };
+		9B7BA433136DE62800BD1418 /* Escorpiao.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7BA42F136DE62800BD1418 /* Escorpiao.m */; };
+		9B7BA434136DE62800BD1418 /* Ra.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7BA431136DE62800BD1418 /* Ra.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -305,6 +328,39 @@
 		9B512D2C136B35C40064F84E /* sapo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sapo.png; sourceTree = "<group>"; };
 		9B512D2F136B37A80064F84E /* leao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leao.png; sourceTree = "<group>"; };
 		9B512D31136B50A20064F84E /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		9B51B298136D9DBE00CAE9EE /* Danakilia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Danakilia.h; sourceTree = "<group>"; };
+		9B51B299136D9DBE00CAE9EE /* Danakilia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Danakilia.m; sourceTree = "<group>"; };
+		9B51B29A136D9DBE00CAE9EE /* Jaguatirica.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jaguatirica.h; sourceTree = "<group>"; };
+		9B51B29B136D9DBE00CAE9EE /* Jaguatirica.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jaguatirica.m; sourceTree = "<group>"; };
+		9B51B29C136D9DBE00CAE9EE /* Manga.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Manga.h; sourceTree = "<group>"; };
+		9B51B29D136D9DBE00CAE9EE /* Manga.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Manga.m; sourceTree = "<group>"; };
+		9B51B29E136D9DBE00CAE9EE /* Marula.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marula.h; sourceTree = "<group>"; };
+		9B51B29F136D9DBE00CAE9EE /* Marula.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Marula.m; sourceTree = "<group>"; };
+		9B51B2A0136D9DBE00CAE9EE /* Piranha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Piranha.h; sourceTree = "<group>"; };
+		9B51B2A1136D9DBE00CAE9EE /* Piranha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Piranha.m; sourceTree = "<group>"; };
+		9B51B2A2136D9DBE00CAE9EE /* Tambaqui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tambaqui.h; sourceTree = "<group>"; };
+		9B51B2A3136D9DBE00CAE9EE /* Tambaqui.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tambaqui.m; sourceTree = "<group>"; };
+		9B66E8B3136DE868007F7626 /* ViuvaNegra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViuvaNegra.h; sourceTree = "<group>"; };
+		9B66E8B4136DE868007F7626 /* ViuvaNegra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViuvaNegra.m; sourceTree = "<group>"; };
+		9B66E8B8136DE888007F7626 /* Tarantula.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tarantula.h; sourceTree = "<group>"; };
+		9B66E8B9136DE888007F7626 /* Tarantula.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tarantula.m; sourceTree = "<group>"; };
+		9B66E8BB136DE8B3007F7626 /* Naja.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Naja.h; sourceTree = "<group>"; };
+		9B66E8BC136DE8B3007F7626 /* Naja.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Naja.m; sourceTree = "<group>"; };
+		9B66E8BE136DE8DE007F7626 /* Hiena.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hiena.h; sourceTree = "<group>"; };
+		9B66E8BF136DE8DE007F7626 /* Hiena.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hiena.m; sourceTree = "<group>"; };
+		9B66E8C1136DE91C007F7626 /* Kiwano.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Kiwano.h; sourceTree = "<group>"; };
+		9B66E8C2136DE91C007F7626 /* Kiwano.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kiwano.m; sourceTree = "<group>"; };
+		9B66E8C3136DE91C007F7626 /* NoemNoem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoemNoem.h; sourceTree = "<group>"; };
+		9B66E8C4136DE91C007F7626 /* NoemNoem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoemNoem.m; sourceTree = "<group>"; };
+		9B66E8C7136DEBC8007F7626 /* Cupuacu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cupuacu.h; sourceTree = "<group>"; };
+		9B66E8C8136DEBC8007F7626 /* Cupuacu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cupuacu.m; sourceTree = "<group>"; };
+		9B66E8CA136DEE3E007F7626 /* cupuacu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cupuacu.png; sourceTree = "<group>"; };
+		9B66E8CC136DF019007F7626 /* manga.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manga.png; sourceTree = "<group>"; };
+		9B66E8CE136DF1AC007F7626 /* jaguatirica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jaguatirica.png; sourceTree = "<group>"; };
+		9B66E8D0136DF22B007F7626 /* piranha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piranha.png; sourceTree = "<group>"; };
+		9B66E8D2136DF2B1007F7626 /* tambaqui.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tambaqui.png; sourceTree = "<group>"; };
+		9B66E8D4136DF9FF007F7626 /* escorpiao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = escorpiao.png; sourceTree = "<group>"; };
+		9B66E8D6136E065B007F7626 /* caranguejeira.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = caranguejeira.png; sourceTree = "<group>"; };
 		9B759B37135FD097000CCD47 /* Explorador.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Explorador.h; sourceTree = "<group>"; };
 		9B759B38135FD097000CCD47 /* Explorador.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Explorador.m; sourceTree = "<group>"; };
 		9B759B39135FD097000CCD47 /* Mato.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mato.h; sourceTree = "<group>"; };
@@ -313,6 +369,12 @@
 		9B75FD3613699F370092AE05 /* Sapo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sapo.m; sourceTree = "<group>"; };
 		9B75FD391369A35A0092AE05 /* Leao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Leao.h; sourceTree = "<group>"; };
 		9B75FD3A1369A35A0092AE05 /* Leao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Leao.m; sourceTree = "<group>"; };
+		9B7BA42C136DE62800BD1418 /* AranhaCaran.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AranhaCaran.h; sourceTree = "<group>"; };
+		9B7BA42D136DE62800BD1418 /* AranhaCaran.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AranhaCaran.m; sourceTree = "<group>"; };
+		9B7BA42E136DE62800BD1418 /* Escorpiao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Escorpiao.h; sourceTree = "<group>"; };
+		9B7BA42F136DE62800BD1418 /* Escorpiao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Escorpiao.m; sourceTree = "<group>"; };
+		9B7BA430136DE62800BD1418 /* Ra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ra.h; sourceTree = "<group>"; };
+		9B7BA431136DE62800BD1418 /* Ra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ra.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -365,8 +427,8 @@
 		9B20B6EB135CCB4100E53138 /* NoSoEnchantedForest */ = {
 			isa = PBXGroup;
 			children = (
-				9B25A11D135DF17A00522BE8 /* Cobra.h */,
-				9B25A11E135DF17A00522BE8 /* Cobra.m */,
+				9B7BA437136DE78F00BD1418 /* Fase2 */,
+				9B7BA436136DE67800BD1418 /* Fase1 */,
 				9B759B37135FD097000CCD47 /* Explorador.h */,
 				9B759B38135FD097000CCD47 /* Explorador.m */,
 				9B759B39135FD097000CCD47 /* Mato.h */,
@@ -379,10 +441,6 @@
 				9B20B7EF135CCB4200E53138 /* AppDelegate.m */,
 				9B20B7F1135CCB4200E53138 /* HelloWorldLayer.h */,
 				9B20B7F2135CCB4200E53138 /* HelloWorldLayer.m */,
-				9B75FD3513699F370092AE05 /* Sapo.h */,
-				9B75FD3613699F370092AE05 /* Sapo.m */,
-				9B75FD391369A35A0092AE05 /* Leao.h */,
-				9B75FD3A1369A35A0092AE05 /* Leao.m */,
 				9B20B6EC135CCB4100E53138 /* Resources */,
 				9B20B6F8135CCB4100E53138 /* cocos2d */,
 				9B20B7EA135CCB4200E53138 /* Supporting Files */,
@@ -393,6 +451,13 @@
 		9B20B6EC135CCB4100E53138 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9B66E8D6136E065B007F7626 /* caranguejeira.png */,
+				9B66E8D4136DF9FF007F7626 /* escorpiao.png */,
+				9B66E8D2136DF2B1007F7626 /* tambaqui.png */,
+				9B66E8D0136DF22B007F7626 /* piranha.png */,
+				9B66E8CE136DF1AC007F7626 /* jaguatirica.png */,
+				9B66E8CC136DF019007F7626 /* manga.png */,
+				9B66E8CA136DEE3E007F7626 /* cupuacu.png */,
 				9B512D31136B50A20064F84E /* heart.png */,
 				9B512D2F136B37A80064F84E /* leao.png */,
 				9B512D2C136B35C40064F84E /* sapo.png */,
@@ -588,6 +653,58 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		9B7BA436136DE67800BD1418 /* Fase1 */ = {
+			isa = PBXGroup;
+			children = (
+				9B66E8C7136DEBC8007F7626 /* Cupuacu.h */,
+				9B66E8C8136DEBC8007F7626 /* Cupuacu.m */,
+				9B7BA42C136DE62800BD1418 /* AranhaCaran.h */,
+				9B7BA42D136DE62800BD1418 /* AranhaCaran.m */,
+				9B7BA42E136DE62800BD1418 /* Escorpiao.h */,
+				9B7BA42F136DE62800BD1418 /* Escorpiao.m */,
+				9B7BA430136DE62800BD1418 /* Ra.h */,
+				9B7BA431136DE62800BD1418 /* Ra.m */,
+				9B51B29A136D9DBE00CAE9EE /* Jaguatirica.h */,
+				9B51B29B136D9DBE00CAE9EE /* Jaguatirica.m */,
+				9B51B29C136D9DBE00CAE9EE /* Manga.h */,
+				9B51B29D136D9DBE00CAE9EE /* Manga.m */,
+				9B51B2A0136D9DBE00CAE9EE /* Piranha.h */,
+				9B51B2A1136D9DBE00CAE9EE /* Piranha.m */,
+				9B51B2A2136D9DBE00CAE9EE /* Tambaqui.h */,
+				9B51B2A3136D9DBE00CAE9EE /* Tambaqui.m */,
+				9B25A11D135DF17A00522BE8 /* Cobra.h */,
+				9B25A11E135DF17A00522BE8 /* Cobra.m */,
+			);
+			name = Fase1;
+			sourceTree = "<group>";
+		};
+		9B7BA437136DE78F00BD1418 /* Fase2 */ = {
+			isa = PBXGroup;
+			children = (
+				9B66E8C1136DE91C007F7626 /* Kiwano.h */,
+				9B66E8C2136DE91C007F7626 /* Kiwano.m */,
+				9B66E8C3136DE91C007F7626 /* NoemNoem.h */,
+				9B66E8C4136DE91C007F7626 /* NoemNoem.m */,
+				9B66E8BE136DE8DE007F7626 /* Hiena.h */,
+				9B66E8BF136DE8DE007F7626 /* Hiena.m */,
+				9B66E8BB136DE8B3007F7626 /* Naja.h */,
+				9B66E8BC136DE8B3007F7626 /* Naja.m */,
+				9B66E8B8136DE888007F7626 /* Tarantula.h */,
+				9B66E8B9136DE888007F7626 /* Tarantula.m */,
+				9B66E8B3136DE868007F7626 /* ViuvaNegra.h */,
+				9B66E8B4136DE868007F7626 /* ViuvaNegra.m */,
+				9B51B298136D9DBE00CAE9EE /* Danakilia.h */,
+				9B51B299136D9DBE00CAE9EE /* Danakilia.m */,
+				9B51B29E136D9DBE00CAE9EE /* Marula.h */,
+				9B51B29F136D9DBE00CAE9EE /* Marula.m */,
+				9B75FD3513699F370092AE05 /* Sapo.h */,
+				9B75FD3613699F370092AE05 /* Sapo.m */,
+				9B75FD391369A35A0092AE05 /* Leao.h */,
+				9B75FD3A1369A35A0092AE05 /* Leao.m */,
+			);
+			name = Fase2;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -646,6 +763,13 @@
 				9B512D2D136B35C40064F84E /* sapo.png in Resources */,
 				9B512D30136B37A80064F84E /* leao.png in Resources */,
 				9B512D32136B50A20064F84E /* heart.png in Resources */,
+				9B66E8CB136DEE3E007F7626 /* cupuacu.png in Resources */,
+				9B66E8CD136DF019007F7626 /* manga.png in Resources */,
+				9B66E8CF136DF1AC007F7626 /* jaguatirica.png in Resources */,
+				9B66E8D1136DF22B007F7626 /* piranha.png in Resources */,
+				9B66E8D3136DF2B1007F7626 /* tambaqui.png in Resources */,
+				9B66E8D5136DF9FF007F7626 /* escorpiao.png in Resources */,
+				9B66E8D7136E065B007F7626 /* caranguejeira.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -741,6 +865,22 @@
 				9B759B3C135FD097000CCD47 /* Mato.m in Sources */,
 				9B75FD3713699F370092AE05 /* Sapo.m in Sources */,
 				9B75FD3B1369A35A0092AE05 /* Leao.m in Sources */,
+				9B51B2A5136D9DBE00CAE9EE /* Danakilia.m in Sources */,
+				9B51B2A6136D9DBE00CAE9EE /* Jaguatirica.m in Sources */,
+				9B51B2A7136D9DBE00CAE9EE /* Manga.m in Sources */,
+				9B51B2A8136D9DBE00CAE9EE /* Marula.m in Sources */,
+				9B51B2A9136D9DBE00CAE9EE /* Piranha.m in Sources */,
+				9B51B2AA136D9DBE00CAE9EE /* Tambaqui.m in Sources */,
+				9B7BA432136DE62800BD1418 /* AranhaCaran.m in Sources */,
+				9B7BA433136DE62800BD1418 /* Escorpiao.m in Sources */,
+				9B7BA434136DE62800BD1418 /* Ra.m in Sources */,
+				9B66E8B5136DE868007F7626 /* ViuvaNegra.m in Sources */,
+				9B66E8BA136DE888007F7626 /* Tarantula.m in Sources */,
+				9B66E8BD136DE8B3007F7626 /* Naja.m in Sources */,
+				9B66E8C0136DE8DE007F7626 /* Hiena.m in Sources */,
+				9B66E8C5136DE91C007F7626 /* Kiwano.m in Sources */,
+				9B66E8C6136DE91C007F7626 /* NoemNoem.m in Sources */,
+				9B66E8C9136DEBC8007F7626 /* Cupuacu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

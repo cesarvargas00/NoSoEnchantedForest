@@ -19,7 +19,6 @@
     Floresta *forest;
     CCSprite* sprite;
     Explorador* explorer;
-    NSMutableArray* arrayExplorador;
     CGSize size;
     NSMutableArray* hearts;
 }

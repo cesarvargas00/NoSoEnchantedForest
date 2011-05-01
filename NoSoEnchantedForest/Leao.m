@@ -27,6 +27,7 @@
 - (void)dealloc
 {
     [super dealloc];
+    [sprite release];
 }
 
 -(void)efeito:(Explorador*)explorador{

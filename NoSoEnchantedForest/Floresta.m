@@ -9,8 +9,14 @@
 #import "Floresta.h"
 #import <stdlib.h>
 #import "Cobra.h"
-#import "Sapo.h"
-#import "Leao.h"
+#import "Ra.h"
+#import "Piranha.h"
+#import "Jaguatirica.h"
+#import "Escorpiao.h"
+#import "AranhaCaran.h"
+#import "Tambaqui.h"
+#import "Manga.h"
+#import "Cupuacu.h"
 
 @implementation Floresta
 
@@ -26,73 +32,86 @@
             [arrayMato addObject:[NSMutableArray array]];
         }
         int r;
-        //Gera um número random de 0 a 3, e dependendo do número, aloca um objeto diferente.
+        //Gera um número random de 0 a 26, e dependendo do número, aloca um objeto diferente.
         for(int i=0;i<tamanho;i++){
             for(int j=0;j<tamanho;j++){
-                r = arc4random() % 9;
-                if(r==0){
+                r = arc4random() % 26;
+                if(r<12){
+                    Mato *mato = [[Mato alloc] init];
+                    [[arrayMato objectAtIndex:i]addObject:mato];
+                    [mato release];
+                }
+                else if(r==11 || r==12)
+                {
+                    Mato *mato = [[Tambaqui alloc] init];
+                    [[arrayMato objectAtIndex:i]addObject:mato];
+                    [mato release];
+                }
+                else if(r==13 || r==14)
+                {
+                    Mato *mato = [[Manga alloc] init];
+                    [[arrayMato objectAtIndex:i]addObject:mato];
+                    [mato release];
+                }            
+                else if(r==15 || r==16)
+                {
+                    Mato *mato = [[Cupuacu alloc] init];
+                    [[arrayMato objectAtIndex:i]addObject:mato];
+                    [mato release];
+                }
+                else if(r==17)
+                {
+                    Mato *mato = [[Jaguatirica alloc] init];
+                    [[arrayMato objectAtIndex:i]addObject:mato];
+                    [mato release];
+                }
+                else if(r==18)
+                {
+                    Mato *mato = [[Piranha alloc] init];
+                    [[arrayMato objectAtIndex:i]addObject:mato];
+                    [mato release];
+                }
+                else if(r==19)
+                {
                     Mato *mato = [[Cobra alloc] init];
                     [[arrayMato objectAtIndex:i]addObject:mato];
                     [mato release];
                 }
-                else if(r==1)
+                else if(r==20||r==21)
                 {
-                    Mato *mato = [[Sapo alloc] init];
+                    Mato *mato = [[Ra alloc] init];
                     [[arrayMato objectAtIndex:i]addObject:mato];
                     [mato release];
                 }
-                else if(r==2)
+                else if(r==22 || r==23)
                 {
-                    Mato *mato = [[Leao alloc] init];
-                    [[arrayMato objectAtIndex:i]addObject:mato];
-                    [mato release];
-                }            
-                else if(r==3)
-                {
-                    Mato *mato = [[Mato alloc] init];
+                    Mato *mato = [[AranhaCaran alloc] init];
                     [[arrayMato objectAtIndex:i]addObject:mato];
                     [mato release];
                 }
-                else if(r==4)
+                else if(r==24 || r==25)
                 {
-                    Mato *mato = [[Mato alloc] init];
+                    Mato *mato = [[Escorpiao alloc] init];
                     [[arrayMato objectAtIndex:i]addObject:mato];
                     [mato release];
                 }
-                else if(r==5)
-                {
-                    Mato *mato = [[Mato alloc] init];
-                    [[arrayMato objectAtIndex:i]addObject:mato];
-                    [mato release];
-                }
-                else if(r==6)
-                {
-                    Mato *mato = [[Mato alloc] init];
-                    [[arrayMato objectAtIndex:i]addObject:mato];
-                    [mato release];
-                }
-                else if(r==7)
-                {
-                    Mato *mato = [[Mato alloc] init];
-                    [[arrayMato objectAtIndex:i]addObject:mato];
-                    [mato release];
-                }
-                else if(r==8)
-                {
-                    Mato *mato = [[Mato alloc] init];
-                    [[arrayMato objectAtIndex:i]addObject:mato];
-                    [mato release];
-                }
-
             }
         }
+        //Seta o último como mato:
+        Mato *mato = [[Mato alloc] init];
+         [[arrayMato objectAtIndex:tamanho-1]removeObjectAtIndex:tamanho-1];
+        [[arrayMato objectAtIndex:tamanho-1]addObject:mato];
+        [mato release];
+        
     }
     
     return self;
 }
 
-- (void)dealloc{         
+- (void)dealloc{      
+    
     [super dealloc];
+    [arrayMato release];
 }
 
 -(Mato*)getMatoX:(int)indiceX Y:(int)indiceY
