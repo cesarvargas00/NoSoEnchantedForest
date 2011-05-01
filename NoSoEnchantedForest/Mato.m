@@ -18,6 +18,7 @@
         CCSprite* _sprite = [[CCSprite alloc]initWithFile:@"mato.png"];
         sprite =[_sprite retain];
         [_sprite release ];
+        explored=NO;
     }
     return self;
 }
@@ -37,5 +38,12 @@
 -(CCSprite*)getSprite
 {
     return sprite;
+}
+
+-(BOOL)isExplored{
+    return explored;
+}
+-(void)setExplored:(BOOL) flag{
+    explored=flag;
 }
 @end

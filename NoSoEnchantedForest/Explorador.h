@@ -21,4 +21,5 @@
 -(CCSprite *) getSprite;
 -(Pos)getPos;
 -(void)setPosX:(int)x Y:(int) y;
+
 @end

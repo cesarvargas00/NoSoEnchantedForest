@@ -12,11 +12,13 @@
 @interface Mato : NSObject {
     Pos posicao;
     CCSprite* sprite;
+    BOOL explored;
 }
 - (id)init;
 
 -(void)efeito:(Explorador*)explorador;
 
 -(CCSprite*)getSprite;
-
+-(BOOL)isExplored;
+-(void)setExplored:(BOOL) flag;
 @end

@@ -101,6 +101,9 @@
 		9B25A125135E199D00522BE8 /* explorador.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B25A124135E199D00522BE8 /* explorador.png */; };
 		9B25A128135E1B1000522BE8 /* mato.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B25A126135E1B1000522BE8 /* mato.png */; };
 		9B25A129135E1B1000522BE8 /* perigo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B25A127135E1B1000522BE8 /* perigo.png */; };
+		9B2F701F136E13E10018DAB4 /* GameOverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2F701E136E13E10018DAB4 /* GameOverScene.m */; };
+		9B2F7023136E19370018DAB4 /* Cidade.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2F7022136E19370018DAB4 /* Cidade.m */; };
+		9B2F7025136E1AE40018DAB4 /* cidade.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B2F7024136E1AE40018DAB4 /* cidade.png */; };
 		9B512D2D136B35C40064F84E /* sapo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B512D2C136B35C40064F84E /* sapo.png */; };
 		9B512D30136B37A80064F84E /* leao.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B512D2F136B37A80064F84E /* leao.png */; };
 		9B512D32136B50A20064F84E /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B512D31136B50A20064F84E /* heart.png */; };
@@ -325,6 +328,11 @@
 		9B25A124135E199D00522BE8 /* explorador.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explorador.png; sourceTree = "<group>"; };
 		9B25A126135E1B1000522BE8 /* mato.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mato.png; sourceTree = "<group>"; };
 		9B25A127135E1B1000522BE8 /* perigo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = perigo.png; sourceTree = "<group>"; };
+		9B2F701D136E13E10018DAB4 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverScene.h; path = ../GameOverScene.h; sourceTree = "<group>"; };
+		9B2F701E136E13E10018DAB4 /* GameOverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameOverScene.m; path = ../GameOverScene.m; sourceTree = "<group>"; };
+		9B2F7021136E19370018DAB4 /* Cidade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cidade.h; sourceTree = "<group>"; };
+		9B2F7022136E19370018DAB4 /* Cidade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cidade.m; sourceTree = "<group>"; };
+		9B2F7024136E1AE40018DAB4 /* cidade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cidade.png; sourceTree = "<group>"; };
 		9B512D2C136B35C40064F84E /* sapo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sapo.png; sourceTree = "<group>"; };
 		9B512D2F136B37A80064F84E /* leao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leao.png; sourceTree = "<group>"; };
 		9B512D31136B50A20064F84E /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
@@ -441,6 +449,8 @@
 				9B20B7EF135CCB4200E53138 /* AppDelegate.m */,
 				9B20B7F1135CCB4200E53138 /* HelloWorldLayer.h */,
 				9B20B7F2135CCB4200E53138 /* HelloWorldLayer.m */,
+				9B2F701D136E13E10018DAB4 /* GameOverScene.h */,
+				9B2F701E136E13E10018DAB4 /* GameOverScene.m */,
 				9B20B6EC135CCB4100E53138 /* Resources */,
 				9B20B6F8135CCB4100E53138 /* cocos2d */,
 				9B20B7EA135CCB4200E53138 /* Supporting Files */,
@@ -451,6 +461,7 @@
 		9B20B6EC135CCB4100E53138 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9B2F7024136E1AE40018DAB4 /* cidade.png */,
 				9B66E8D6136E065B007F7626 /* caranguejeira.png */,
 				9B66E8D4136DF9FF007F7626 /* escorpiao.png */,
 				9B66E8D2136DF2B1007F7626 /* tambaqui.png */,
@@ -674,6 +685,8 @@
 				9B51B2A3136D9DBE00CAE9EE /* Tambaqui.m */,
 				9B25A11D135DF17A00522BE8 /* Cobra.h */,
 				9B25A11E135DF17A00522BE8 /* Cobra.m */,
+				9B2F7021136E19370018DAB4 /* Cidade.h */,
+				9B2F7022136E19370018DAB4 /* Cidade.m */,
 			);
 			name = Fase1;
 			sourceTree = "<group>";
@@ -770,6 +783,7 @@
 				9B66E8D3136DF2B1007F7626 /* tambaqui.png in Resources */,
 				9B66E8D5136DF9FF007F7626 /* escorpiao.png in Resources */,
 				9B66E8D7136E065B007F7626 /* caranguejeira.png in Resources */,
+				9B2F7025136E1AE40018DAB4 /* cidade.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -881,6 +895,8 @@
 				9B66E8C5136DE91C007F7626 /* Kiwano.m in Sources */,
 				9B66E8C6136DE91C007F7626 /* NoemNoem.m in Sources */,
 				9B66E8C9136DEBC8007F7626 /* Cupuacu.m in Sources */,
+				9B2F701F136E13E10018DAB4 /* GameOverScene.m in Sources */,
+				9B2F7023136E19370018DAB4 /* Cidade.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

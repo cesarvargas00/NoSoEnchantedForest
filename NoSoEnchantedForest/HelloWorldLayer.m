@@ -11,7 +11,7 @@
 
 #import "HelloWorldLayer.h"
 #import "Floresta.h"
-
+#import "GameOverScene.h"
 #define duracao 0.5
 
 //Variáveis Globais de direção
@@ -19,7 +19,7 @@ BOOL turnLeft= NO;
 BOOL turnRight= NO;
 BOOL goDown = NO;
 BOOL goUp= NO;
-BOOL moving=NO;
+//BOOL moving=NO;
 
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
@@ -83,6 +83,10 @@ BOOL moving=NO;
         for(int i=0;i<tamanho;i++)
             for(int j=0;j<tamanho;j++)
                 [[[arraySprites objectAtIndex:i]objectAtIndex:j] setVisible:NO];
+        
+        //Seta visibilidade da CIDADE para YES
+        
+        [[[arraySprites objectAtIndex:tamanho-1]objectAtIndex:tamanho-1] setVisible:YES];
         //Preenche o vetor de corações:
         for (int i=0; i<5; i++){
             CCSprite* heart =[[CCSprite alloc]initWithFile:@"heart.png"];
@@ -154,7 +158,8 @@ BOOL moving=NO;
                                                                 position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+2)*[explorer getPos].y)]];
         }
         turnRight=NO;
-        [self updateHearts];
+        if(![[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1]isExplored])
+            [self updateHearts];
     }
     else  if (turnLeft) {
         //Move explorador para a esquerda - MOVES EXPLORER TO THE LEFT
@@ -166,7 +171,8 @@ BOOL moving=NO;
                                                                 position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+2)*[explorer getPos].y)]];
         }
         turnLeft=NO;
-        [self updateHearts];
+        if(![[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1]isExplored])
+            [self updateHearts];
     }
     else  if (goUp) {
         //Move explorador para cima  - MOVES EXPLORER UP
@@ -178,7 +184,8 @@ BOOL moving=NO;
                                                                 position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+2)*[explorer getPos].y)]];
         }
         goUp=NO;
-        [self updateHearts];
+        if(![[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1]isExplored])
+            [self updateHearts];
     }
     else  if (goDown) {
         //Move explorador para baixo  - MOVES EXPLORER DOWN
@@ -191,25 +198,38 @@ BOOL moving=NO;
                                                                 position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+2)*[explorer getPos].y)]];
         }
         goDown=NO;
-        [self updateHearts];
+        if(![[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1]isExplored])
+            [self updateHearts];
     }
 }
 
 -(void)updateHearts{
     //Atualiza os corações
-    if([explorer getVida]>0 && [explorer getVida]<6){
-    [[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1] efeito:explorer];
-    
-        for(int i=0;i<5;i++){
-            [[hearts objectAtIndex:i
-              ]setVisible:NO];
+    if([explorer getPos].x==tamanho && [explorer getPos].y==tamanho){
+        GameOverScene *gameOverScene = [GameOverScene node];
+        [gameOverScene.layer.label setString:@"Você Ganhou!!!"];
+        [[CCDirector sharedDirector] replaceScene:gameOverScene];
+    }
+    else{
+        if([explorer getVida]<1)
+        {
+            GameOverScene *gameOverScene = [GameOverScene node];
+            [gameOverScene.layer.label setString:@"Você Perdeu!!!"];
+            [[CCDirector sharedDirector] replaceScene:gameOverScene];
         }
-        
-        for(int i=0;i<[explorer getVida];i++){
-            [[hearts objectAtIndex:i
-              ]setVisible:YES];
+        if([explorer getVida]>0 && [explorer getVida]<6){
+            [[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1] efeito:explorer];
+            [[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1] setExplored:YES];
+            
+            for(int i=0;i<5;i++){
+                [[hearts objectAtIndex:i
+                  ]setVisible:NO];
+            }
+            for(int i=0;i<[explorer getVida];i++){
+                [[hearts objectAtIndex:i
+                  ]setVisible:YES];
+            }
         }
-
     }
 }
 

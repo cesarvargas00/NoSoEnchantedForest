@@ -17,6 +17,7 @@
 #import "Tambaqui.h"
 #import "Manga.h"
 #import "Cupuacu.h"
+#import "Cidade.h"
 
 @implementation Floresta
 
@@ -31,6 +32,7 @@
         for (int i=0;i<tamanho;i++){
             [arrayMato addObject:[NSMutableArray array]];
         }
+        
         int r;
         //Gera um número random de 0 a 26, e dependendo do número, aloca um objeto diferente.
         for(int i=0;i<tamanho;i++){
@@ -98,7 +100,7 @@
             }
         }
         //Seta o último como mato:
-        Mato *mato = [[Mato alloc] init];
+        Mato *mato = [[Cidade alloc] init];
          [[arrayMato objectAtIndex:tamanho-1]removeObjectAtIndex:tamanho-1];
         [[arrayMato objectAtIndex:tamanho-1]addObject:mato];
         [mato release];
