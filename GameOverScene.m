@@ -50,7 +50,8 @@
 }
 
 - (void)gameOverDone {
-    
+    [[CCEventDispatcher sharedDispatcher]removeAllKeyboardDelegates];
+    [[CCEventDispatcher sharedDispatcher] addKeyboardDelegate:[[HelloWorldLayer scene]getChildByTag:1] priority:0];
     [[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
     
 }

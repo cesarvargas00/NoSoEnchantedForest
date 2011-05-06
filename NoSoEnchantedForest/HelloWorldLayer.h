@@ -12,6 +12,7 @@
 #import <Foundation/Foundation.h>
 #import "Floresta.h"
 // HelloWorldLayer
+
 @interface HelloWorldLayer  : CCLayerColor
 {
     @protected
@@ -25,7 +26,6 @@
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
-
 
 -(BOOL)ccKeyDown:(NSEvent *)event;
 -(void)gameLoop:(ccTime)dt;

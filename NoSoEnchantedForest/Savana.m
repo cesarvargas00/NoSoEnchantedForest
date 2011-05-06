@@ -1,53 +1,53 @@
 //
-//  HelloWorldLayer.m
+//  MyClass.m
 //  NoSoEnchantedForest
 //
-//  Created by Cesar Vargas on 18/04/11.
-//  Copyright __MyCompanyName__ 2011. All rights reserved.
+//  Created by Cesar Vargas on 06/05/11.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-
-// Import the interfaces
-
-#import "HelloWorldLayer.h"
-#import "Floresta.h"
-#import "GameOverScene.h"
 #import "Savana.h"
+#import "GameOverScene.h"
+
+
 #define duracao 0.8
 //Variáveis Globais de direção
-BOOL turnLeft= NO;
-BOOL turnRight= NO;
-BOOL goDown = NO;
-BOOL goUp= NO;
+BOOL turnLeft1= NO;
+BOOL turnRight1= NO;
+BOOL goDown1 = NO;
+BOOL goUp1= NO;
 //BOOL moving=NO;
 
-// HelloWorldLayer implementation
-@implementation HelloWorldLayer
-
-+(CCScene *) scene
+@implementation Savana
+@synthesize layer = _layer;
+- (id)init
 {
-	// 'scene' is an autorelease object.
-	CCScene *scene = [CCScene node];
-	
-	// 'layer' is an autorelease object.
-	HelloWorldLayer *layer = [HelloWorldLayer node];
-	
-	// add layer as a child to scene
-	[scene addChild: layer z:1 tag:1];
-	
-	// return the scene
-	return scene;
+    self = [super init];
+    if (self) {
+        self.layer = [SavanaLayer node];
+        [self addChild:_layer];
+    }
+     return self;
 }
 
-// on "init" you need to initialize your instance
--(id) init
+- (void)dealloc
 {
-    
+    [_layer release];
+    _layer = nil;
+    [super dealloc];
+}
+
+@end
+
+@implementation SavanaLayer
+
+- (id)init
+{ 
     [[CCEventDispatcher sharedDispatcher] addKeyboardDelegate:self priority:0];
-	// always call "super" init
-	// Apple recommends to re-assign "self" with the "super" return value
-	if( (self=[super initWithColor:ccc4(5,144,22,255)])) {
-		forest = [[Floresta alloc]init];
+    
+    self = [super init];
+    if ((self=[super initWithColor:ccc4(5,144,22,255)])) {
+        forest = [[Floresta2 alloc]init];
         explorer= [[Explorador alloc]init];
         hearts = [[NSMutableArray alloc]init];
         
@@ -108,48 +108,23 @@ BOOL goUp= NO;
         [self schedule:@selector(gameLoop:)];
     }
     
-	return self;
+    return self;
 }
 
-//TODO on "dealloc" you need to release all your retained objects
-- (void) dealloc
+- (void)dealloc
 {
-	// in case you have something to dealloc, do it in this method
-	// in this particular example nothing needs to be released.
-	// cocos2d will automatically release all the children (Label)
     [forest release];
     [explorer release];
     [hearts release];
-	// don't forget to call "super dealloc"
-	[super dealloc];
-    
+    [super dealloc];
 }
 
--(BOOL)ccKeyDown:(NSEvent *)event{
-    if ([event keyCode]==123) {
-        NSLog(@"OLA MUNDO , Apertei a tecla:%@",[event characters]);
-        turnLeft = YES;
-    }
-    else if ([event keyCode]==124) {
-        NSLog(@"OLA MUNDO , Apertei a tecla:%@!",[event characters]);
-        turnRight = YES;
-    }
-    else if ([event keyCode]==125) {
-        NSLog(@"OLA MUNDO , Apertei a tecla:%@!",[event characters]);
-        goDown = YES;
-    }
-    else if ([event keyCode]==126) {
-        NSLog(@"OLA MUNDO , Apertei a tecla:%@!",[event characters]);
-        goUp = YES;
-    }
-    return YES;
-}
 
 -(void)gameLoop:(ccTime)dt
 {
     
     //LOOP DO JOGO
-    if (turnRight) {
+    if (turnRight1) {
         //Move explorador para a direita - MOVES EXPLORER TO THE RIGHT
         if([explorer getPos].x < tamanho){
             [explorer setPosX:[explorer getPos].x + 1 Y:[explorer getPos].y];
@@ -158,11 +133,11 @@ BOOL goUp= NO;
             [[explorer getSprite] runAction:[CCMoveTo actionWithDuration:duracao
                                                                 position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+2)*[explorer getPos].y)]];
         }
-        turnRight=NO;
+        turnRight1=NO;
         if(![[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1]isExplored])
             [self updateHearts];
     }
-    else  if (turnLeft) {
+    else  if (turnLeft1) {
         //Move explorador para a esquerda - MOVES EXPLORER TO THE LEFT
         if([explorer getPos].x > 1){
             [explorer setPosX:[explorer getPos].x - 1 Y:[explorer getPos].y];
@@ -171,11 +146,11 @@ BOOL goUp= NO;
             [[explorer getSprite] runAction:[CCMoveTo actionWithDuration:duracao 
                                                                 position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+2)*[explorer getPos].y)]];
         }
-        turnLeft=NO;
+        turnLeft1=NO;
         if(![[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1]isExplored])
             [self updateHearts];
     }
-    else  if (goUp) {
+    else  if (goUp1) {
         //Move explorador para cima  - MOVES EXPLORER UP
         if([explorer getPos].y < tamanho){
             [explorer setPosX:[explorer getPos].x Y:[explorer getPos].y + 1];
@@ -184,11 +159,11 @@ BOOL goUp= NO;
             [[explorer getSprite] runAction:[CCMoveTo actionWithDuration:duracao
                                                                 position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+2)*[explorer getPos].y)]];
         }
-        goUp=NO;
+        goUp1=NO;
         if(![[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1]isExplored])
             [self updateHearts];
     }
-    else  if (goDown) {
+    else  if (goDown1) {
         //Move explorador para baixo  - MOVES EXPLORER DOWN
         if([explorer getPos].y >1){
             [explorer setPosX:[explorer getPos].x Y:[explorer getPos].y - 1];
@@ -198,26 +173,25 @@ BOOL goUp= NO;
             [[explorer getSprite] runAction:[CCMoveTo actionWithDuration:duracao
                                                                 position:ccp(size.width /(tamanho+1)*[explorer getPos].x,  size.height/(tamanho+2)*[explorer getPos].y)]];
         }
-        goDown=NO;
+        goDown1=NO;
         if(![[forest getMatoX:[explorer getPos].x-1 Y:[explorer getPos].y-1]isExplored])
             [self updateHearts];
     }
 }
 
+
 -(void)updateHearts{
     //Atualiza os corações
     if([explorer getPos].x==tamanho && [explorer getPos].y==tamanho){
-        Savana *savanaScene = [Savana node];
-        [[CCEventDispatcher sharedDispatcher]removeAllKeyboardDelegates];
-        [[CCEventDispatcher sharedDispatcher] addKeyboardDelegate:[savanaScene layer] priority:0];
-        [[CCDirector sharedDirector] replaceScene:savanaScene];
+        GameOverScene *gameOverScene = [GameOverScene node];
+        [gameOverScene.layer.label setString:@"Você Ganhou!!!"];
+        [[CCDirector sharedDirector] replaceScene:gameOverScene];
     }
     else{
         if([explorer getVida]<1)
         {
             GameOverScene *gameOverScene = [GameOverScene node];
             [gameOverScene.layer.label setString:@"Você Perdeu!!!"];
-            
             [[CCDirector sharedDirector] replaceScene:gameOverScene];
         }
         if([explorer getVida]>0 && [explorer getVida]<6){
@@ -235,6 +209,28 @@ BOOL goUp= NO;
         }
     }
 }
+
+-(BOOL)ccKeyDown:(NSEvent *)event{
+    if ([event keyCode]==123) {
+        NSLog(@"OLA MUNDO , Apertei a tecla:%@",[event characters]);
+        turnLeft1 = YES;
+    }
+    else if ([event keyCode]==124) {
+        NSLog(@"OLA MUNDO , Apertei a tecla:%@!",[event characters]);
+        turnRight1 = YES;
+    }
+    else if ([event keyCode]==125) {
+        NSLog(@"OLA MUNDO , Apertei a tecla:%@!",[event characters]);
+        goDown1 = YES;
+    }
+    else if ([event keyCode]==126) {
+        NSLog(@"OLA MUNDO , Apertei a tecla:%@!",[event characters]);
+        goUp1 = YES;
+    }
+    return YES;
+}
+
+
 
 @end
 

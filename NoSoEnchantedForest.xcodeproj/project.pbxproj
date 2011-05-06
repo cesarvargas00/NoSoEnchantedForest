@@ -16,7 +16,6 @@
 		9B20B6EF135CCB4100E53138 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B20B6ED135CCB4100E53138 /* InfoPlist.strings */; };
 		9B20B6F2135CCB4100E53138 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B20B6F0135CCB4100E53138 /* MainMenu.xib */; };
 		9B20B6F4135CCB4100E53138 /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B20B6F3135CCB4100E53138 /* fps_images.png */; };
-		9B20B6F6135CCB4100E53138 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9B20B6F5135CCB4100E53138 /* icon.icns */; };
 		9B20B6FB135CCB4100E53138 /* CCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B20B6FA135CCB4100E53138 /* CCAction.m */; };
 		9B20B6FE135CCB4100E53138 /* CCActionCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B20B6FD135CCB4100E53138 /* CCActionCamera.m */; };
 		9B20B701135CCB4100E53138 /* CCActionEase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B20B700135CCB4100E53138 /* CCActionEase.m */; };
@@ -113,6 +112,7 @@
 		9B51B2A8136D9DBE00CAE9EE /* Marula.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B51B29F136D9DBE00CAE9EE /* Marula.m */; };
 		9B51B2A9136D9DBE00CAE9EE /* Piranha.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B51B2A1136D9DBE00CAE9EE /* Piranha.m */; };
 		9B51B2AA136D9DBE00CAE9EE /* Tambaqui.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B51B2A3136D9DBE00CAE9EE /* Tambaqui.m */; };
+		9B52124C136E1F9100DFB455 /* icone.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9B52124B136E1F9100DFB455 /* icone.icns */; };
 		9B66E8B5136DE868007F7626 /* ViuvaNegra.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B66E8B4136DE868007F7626 /* ViuvaNegra.m */; };
 		9B66E8BA136DE888007F7626 /* Tarantula.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B66E8B9136DE888007F7626 /* Tarantula.m */; };
 		9B66E8BD136DE8B3007F7626 /* Naja.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B66E8BC136DE8B3007F7626 /* Naja.m */; };
@@ -134,6 +134,8 @@
 		9B7BA432136DE62800BD1418 /* AranhaCaran.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7BA42D136DE62800BD1418 /* AranhaCaran.m */; };
 		9B7BA433136DE62800BD1418 /* Escorpiao.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7BA42F136DE62800BD1418 /* Escorpiao.m */; };
 		9B7BA434136DE62800BD1418 /* Ra.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B7BA431136DE62800BD1418 /* Ra.m */; };
+		9BC1B58313749D8900E870CC /* Savana.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1B58213749D8900E870CC /* Savana.m */; };
+		9BC1B5931374AA2F00E870CC /* Floresta2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BC1B5921374AA2F00E870CC /* Floresta2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -147,7 +149,6 @@
 		9B20B6EE135CCB4100E53138 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = Resources/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9B20B6F1135CCB4100E53138 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9B20B6F3135CCB4100E53138 /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fps_images.png; path = Resources/fps_images.png; sourceTree = "<group>"; };
-		9B20B6F5135CCB4100E53138 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icon.icns; path = Resources/icon.icns; sourceTree = "<group>"; };
 		9B20B6F7135CCB4100E53138 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
 		9B20B6F9135CCB4100E53138 /* CCAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCAction.h; path = libs/cocos2d/CCAction.h; sourceTree = "<group>"; };
 		9B20B6FA135CCB4100E53138 /* CCAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCAction.m; path = libs/cocos2d/CCAction.m; sourceTree = "<group>"; };
@@ -348,6 +349,7 @@
 		9B51B2A1136D9DBE00CAE9EE /* Piranha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Piranha.m; sourceTree = "<group>"; };
 		9B51B2A2136D9DBE00CAE9EE /* Tambaqui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tambaqui.h; sourceTree = "<group>"; };
 		9B51B2A3136D9DBE00CAE9EE /* Tambaqui.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tambaqui.m; sourceTree = "<group>"; };
+		9B52124B136E1F9100DFB455 /* icone.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = icone.icns; path = ../icone.icns; sourceTree = "<group>"; };
 		9B66E8B3136DE868007F7626 /* ViuvaNegra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViuvaNegra.h; sourceTree = "<group>"; };
 		9B66E8B4136DE868007F7626 /* ViuvaNegra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViuvaNegra.m; sourceTree = "<group>"; };
 		9B66E8B8136DE888007F7626 /* Tarantula.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tarantula.h; sourceTree = "<group>"; };
@@ -383,6 +385,10 @@
 		9B7BA42F136DE62800BD1418 /* Escorpiao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Escorpiao.m; sourceTree = "<group>"; };
 		9B7BA430136DE62800BD1418 /* Ra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ra.h; sourceTree = "<group>"; };
 		9B7BA431136DE62800BD1418 /* Ra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ra.m; sourceTree = "<group>"; };
+		9BC1B58113749D8900E870CC /* Savana.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Savana.h; sourceTree = "<group>"; };
+		9BC1B58213749D8900E870CC /* Savana.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Savana.m; sourceTree = "<group>"; };
+		9BC1B5911374AA2F00E870CC /* Floresta2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Floresta2.h; sourceTree = "<group>"; };
+		9BC1B5921374AA2F00E870CC /* Floresta2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Floresta2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -454,6 +460,10 @@
 				9B20B6EC135CCB4100E53138 /* Resources */,
 				9B20B6F8135CCB4100E53138 /* cocos2d */,
 				9B20B7EA135CCB4200E53138 /* Supporting Files */,
+				9BC1B58113749D8900E870CC /* Savana.h */,
+				9BC1B58213749D8900E870CC /* Savana.m */,
+				9BC1B5911374AA2F00E870CC /* Floresta2.h */,
+				9BC1B5921374AA2F00E870CC /* Floresta2.m */,
 			);
 			path = NoSoEnchantedForest;
 			sourceTree = "<group>";
@@ -461,6 +471,7 @@
 		9B20B6EC135CCB4100E53138 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9B52124B136E1F9100DFB455 /* icone.icns */,
 				9B2F7024136E1AE40018DAB4 /* cidade.png */,
 				9B66E8D6136E065B007F7626 /* caranguejeira.png */,
 				9B66E8D4136DF9FF007F7626 /* escorpiao.png */,
@@ -478,7 +489,6 @@
 				9B20B6ED135CCB4100E53138 /* InfoPlist.strings */,
 				9B20B6F0135CCB4100E53138 /* MainMenu.xib */,
 				9B20B6F3135CCB4100E53138 /* fps_images.png */,
-				9B20B6F5135CCB4100E53138 /* icon.icns */,
 				9B20B6F7135CCB4100E53138 /* Info.plist */,
 			);
 			name = Resources;
@@ -769,7 +779,6 @@
 				9B20B6EF135CCB4100E53138 /* InfoPlist.strings in Resources */,
 				9B20B6F2135CCB4100E53138 /* MainMenu.xib in Resources */,
 				9B20B6F4135CCB4100E53138 /* fps_images.png in Resources */,
-				9B20B6F6135CCB4100E53138 /* icon.icns in Resources */,
 				9B25A125135E199D00522BE8 /* explorador.png in Resources */,
 				9B25A128135E1B1000522BE8 /* mato.png in Resources */,
 				9B25A129135E1B1000522BE8 /* perigo.png in Resources */,
@@ -784,6 +793,7 @@
 				9B66E8D5136DF9FF007F7626 /* escorpiao.png in Resources */,
 				9B66E8D7136E065B007F7626 /* caranguejeira.png in Resources */,
 				9B2F7025136E1AE40018DAB4 /* cidade.png in Resources */,
+				9B52124C136E1F9100DFB455 /* icone.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -897,6 +907,8 @@
 				9B66E8C9136DEBC8007F7626 /* Cupuacu.m in Sources */,
 				9B2F701F136E13E10018DAB4 /* GameOverScene.m in Sources */,
 				9B2F7023136E19370018DAB4 /* Cidade.m in Sources */,
+				9BC1B58313749D8900E870CC /* Savana.m in Sources */,
+				9BC1B5931374AA2F00E870CC /* Floresta2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
